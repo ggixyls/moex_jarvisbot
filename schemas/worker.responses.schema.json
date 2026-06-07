@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["request_id", "status", "timestamp"],
+  "properties": {
+    "request_id": { "type": "string", "format": "uuid" },
+    "status": {
+      "type": "string",
+      "enum": ["success", "error", "requires_confirmation", "timeout"]
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "result": {
+      "type": ["object", "null"],
+      "description": "Результат выполнения tool"
+    },
+    "error": {
+      "type": ["string", "null"],
+      "description": "Сообщение об ошибке"
+    },
+    "confirmation_data": {
+      "type": ["object", "null"],
+      "description": "Данные для dry-run подтверждения (для setup_workstation)"
+    }
+  }
+}

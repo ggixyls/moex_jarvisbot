@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["request_id", "user_id", "username", "timestamp", "intent", "payload"],
+  "properties": {
+    "request_id": { "type": "string", "format": "uuid" },
+    "user_id": { "type": "integer" },
+    "username": { "type": ["string", "null"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "intent": {
+      "type": "string",
+      "enum": ["diagnose_auth", "setup_workstation", "status", "help"]
+    },
+    "payload": { "type": "object" }
+  }
+}

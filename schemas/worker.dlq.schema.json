@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["request_id", "error", "timestamp"],
+  "properties": {
+    "request_id": { "type": "string", "format": "uuid" },
+    "error": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "original_message": { "type": ["object", "null"] }
+  }
+}
